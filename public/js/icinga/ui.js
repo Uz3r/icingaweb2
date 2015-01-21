@@ -175,6 +175,7 @@
                 $container.scrollTop(0);
                 $container.scrollTop($anchor.first().position().top);
                 this.icinga.logger.debug('Scrolling ', $container, ' to ', anchorName);
+                return $anchor;
             } else {
                 this.icinga.logger.info('Anchor "' + anchorName + '" not found in ', $container);
             }

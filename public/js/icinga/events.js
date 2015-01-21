@@ -427,6 +427,15 @@
                     }
                     return false;
                 }
+
+                if ($a.closest('#skipcontent').length > 0) {
+                    var $anchor = icinga.ui.scrollContainerToAnchor($(document.body), href.split(/#/)[1]);
+                    if ($anchor) {
+                        icinga.logger.info('Set focus to', $anchor);
+                        $anchor[0].focus();
+                    }
+                    return false;
+                }
             } else {
                 $target = self.getLinkTargetFor($a);
             }

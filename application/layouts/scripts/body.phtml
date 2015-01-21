@@ -37,7 +37,7 @@ if ($notifications->hasMessages()) {
   <div id="skipcontent">
    <h1><?= t('Skip To Content Links'); ?></h1>
    <ul>
-    <li><a href="#sidebar"><?= t('Skip To Local Navigation'); ?></a></li>
+    <li><a href="#navigation"><?= t('Skip To Local Navigation'); ?></a></li>
     <?php if (SearchDashboard::search('dummy')->getPane('search')->hasDashlets()): ?>
       <li><a href="#search"><?= t('Skip To Search'); ?></a></li>
     <?php endif; ?>
@@ -52,6 +52,7 @@ if ($notifications->hasMessages()) {
  </div>
 <?php endif ?>
  <div id="main" role="main">
+  <h1 class="hidden-text"><a name="main">Main Content</a></h1>
   <div id="col1" class="container<?= $moduleClass ?>"<?php if ($moduleName): ?> data-icinga-module="<?= $moduleName ?>" <?php endif ?> data-icinga-url="<?= Url::fromRequest()->without('renderLayout') ?>"<?= $refresh ?> style="display: block">
    <?= $this->render('inline.phtml') ?>
   </div>

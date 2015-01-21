@@ -2,7 +2,7 @@
 use Icinga\Web\Widget\SearchDashboard;
 ?>
 <? if (SearchDashboard::search('dummy')->getPane('search')->hasDashlets()): ?>
-    <h1><?= t('Search'); ?></h1>
+    <h1><a name="search"><?= t('Search'); ?></a></h1>
     <form action="<?= $this->href('search') ?>" method="get" role="search">
         <input
             type="text" name="q" class="search" placeholder="<?= $this->translate('Search...') ?>"
@@ -10,5 +10,5 @@ use Icinga\Web\Widget\SearchDashboard;
         />
     </form>
 <? endif; ?>
-<h1><?= t('Local Navigation'); ?></h1>
+<h1><a name="navigation"><?= t('Local Navigation'); ?></a></h1>
 <?= $menuRenderer; ?>
