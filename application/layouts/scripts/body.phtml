@@ -3,6 +3,7 @@
 use Icinga\Web\Url;
 use Icinga\Web\Notification;
 use Icinga\Authentication\Manager as Auth;
+use Icinga\Web\Widget\SearchDashboard;
 
 
 if (Auth::getInstance()->isAuthenticated()): ?>
@@ -28,8 +29,21 @@ if ($notifications->hasMessages()) {
     }
 }
    ?></ul>
-   <div id="logo" data-base-target="_main"><a href="<?= $this->href('/dashboard') ?>"><img src="<?= $this->href('img/logo_icinga-inv.png') ?>" class="logo" alt="<?= t('Dashboard') ?>" /></a>
- </div>
+  <div id="logo" data-base-target="_main">
+   <a href="<?= $this->href('/dashboard') ?>">
+    <img src="<?= $this->href('img/logo_icinga-inv.png') ?>" class="logo" alt="<?= t('Dashboard') ?>" />
+   </a>
+  </div>
+  <div id="skipcontent">
+   <h1><?= t('Skip To Content Links'); ?></h1>
+   <ul>
+    <li><a href="#sidebar"><?= t('Skip To Local Navigation'); ?></a></li>
+    <?php if (SearchDashboard::search('dummy')->getPane('search')->hasDashlets()): ?>
+      <li><a href="#search"><?= t('Skip To Search'); ?></a></li>
+    <?php endif; ?>
+    <li><a href="#main"><?= t('Skip To Main Content'); ?></a></li>
+   </ul>
+  </div>
  </div>
 
 <?php if (!$this->layout()->isIframe): ?>

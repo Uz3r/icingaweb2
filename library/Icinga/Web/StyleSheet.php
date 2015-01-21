@@ -14,6 +14,7 @@ class StyleSheet
         '../application/fonts/fontello-ifont/css/ifont-embedded.css',
         'css/vendor/tipsy.css',
         'css/icinga/defaults.less',
+        'css/icinga/util.less',
         'css/icinga/layout-colors.less',
         'css/icinga/layout-structure.less',
         'css/icinga/menu.less',

@@ -222,6 +222,10 @@ html.ie8 #menu input.search {
   line-height: 2.5em;
 }
 
+#menu h1 {
+  .hidden-text;
+}
+
 #menu input.search:-ms-input-placeholder {
   color: @colorTextDefault;
 }
@@ -267,4 +271,36 @@ a:focus {
 #menu .active ul li a:focus {
   color: #21b5ad;
   outline: none;
+}
+
+/* Skip to content links on the top of the page. */
+#skipcontent {
+  position: absolute;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  height: 3.6em;
+  width: 13em;
+  h1 {
+    .hidden-text;
+  }
+  ul {
+    list-style-type: none;
+    li {
+      display: inline;
+      a {
+        position: absolute;
+        display: block;
+        z-index: 1;
+        background-color: white;
+        padding: 0.6em;
+        width: 10em;
+        top: 0.5em;
+        left: -999em;
+        &:focus {
+          left: 0.4em;
+        }
+      }
+    }
+  }
 }
